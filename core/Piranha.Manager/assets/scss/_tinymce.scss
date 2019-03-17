@@ -1,7 +1,7 @@
-@import "colors";
+@import "variables";
 
-$mce_bg: $color_border;
-$mce_text: $text_medium;
+$mce_bg: $gray-500;
+$mce_text: $gray-800;
 $mce_hover: darken($mce_bg, 7%);
 $mce_active: lighten($mce_bg, 7%);
 
@@ -10,7 +10,7 @@ $mce_active: lighten($mce_bg, 7%);
 }
 
 .mce-tinymce {
-    border-color: $color_border !important;
+    border-color: $gray-500 !important;
     box-shadow: none !important;
 
     .mce-top-part {
@@ -67,10 +67,10 @@ $mce_active: lighten($mce_bg, 7%);
         box-shadow: none !important;
         padding: 1px 2px !important;
         border-radius: .3rem;
-        border-color: $color_border !important;
+        border-color: $gray-500 !important;
     
         &.mce-tinymce-inline {
-            border: 2px solid $bg !important;
+            border: 2px solid $white !important;
             margin-top: -12px;
             margin-left: -2px;
         }
@@ -157,10 +157,10 @@ $mce_active: lighten($mce_bg, 7%);
     box-shadow: none !important;
     padding: 1px 2px !important;
     border-radius: .3rem;
-    border-color: $color_border !important;
+    border-color: $gray-500 !important;
 
     &.mce-tinymce-inline {
-        border: 2px solid $bg !important;
+        border: 2px solid $white !important;
         margin-top: -12px;
         margin-left: -2px;
     }

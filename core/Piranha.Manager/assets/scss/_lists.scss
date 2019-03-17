@@ -1,7 +1,7 @@
-@import "colors";
+@import "variables";
 
 .list-group {
     .list-group-header {
-        background: $bg_main;
+        background: $gray-400;
     }
 }

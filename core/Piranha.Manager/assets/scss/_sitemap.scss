@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 
 ol.sitemap {
 	padding-left: 0;
@@ -59,7 +59,7 @@ li.sitemap-item {
 
 	&:focus-within {
 		>.dd-handle, >.dd-toggle, >.actions, >.content {
-			background: $color_drop;
+			background: $gray-400;
 		}
 	}
 
@@ -83,7 +83,7 @@ li.sitemap-item {
 
 	.dd-toggle {
 		background: #fff;
-		color: $color_link;
+		color: $primary;
 		box-sizing: border-box;
 		float: left;
 		height: 43px;

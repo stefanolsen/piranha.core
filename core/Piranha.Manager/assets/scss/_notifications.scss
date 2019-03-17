@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 
 .notification {
     position: fixed;
@@ -34,10 +34,10 @@
     }    
 
     &.notification-success {
-        background: $color_success;
+        background: $success;
 
         &::after {
-            border-top-color: $color_success;
+            border-top-color: $success;
         }
     }
 }

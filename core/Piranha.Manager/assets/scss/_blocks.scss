@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 
 .blocks {
     .sortable-placeholder {
@@ -19,7 +19,7 @@
     transition: all .2s ease-in-out;
 
     .block-label {
-        color: $text_lighter;
+        color: $gray-600;
         position: absolute;
         top: .25rem;
         left: 1rem;
@@ -47,21 +47,21 @@
             min-width: 30px;
             padding: .25rem .5rem;
             font-size: .7rem;
-            border: solid 2px $bg;
+            border: solid 2px $white;
 
             &.btn-secondary {
-                background: $color_border;
-                color: $text_medium;
+                background: $gray-500;
+                color: $gray-800;
                 transition: background-color .2s ease-in-out;
 
                 &:hover {
-                    background: darken($color_border, 7%);
+                    background: darken($gray-500, 7%);
                     transition: background-color .2s ease-in-out;
                 }
             }
 
             &:active {
-                border-color: $bg;
+                border-color: $white;
             }
         }
     }
@@ -82,8 +82,8 @@
 
     .editor-area {
 		&.empty {
-			background: $bg_panel url('../img/empty-text.png') 50% 50% no-repeat;
-			border: solid 10px $bg_panel;
+			background: $gray-300 url('../img/empty-text.png') 50% 50% no-repeat;
+			border: solid 10px $gray-300;
             min-height: 106px !important;
 
             p:first-of-type {
@@ -107,7 +107,7 @@
     }
 
 	.block-image {
-		background: $bg_panel;
+		background: $gray-300;
 		position: relative;
 		max-height: 400px;
 		min-height: 200px;
@@ -128,8 +128,8 @@
         }
 
         .block-image-filename {
-            background: $bg;
-            color: $text_light;
+            background: $white;
+            color: $gray-700;
             padding: .5rem 1rem;
             position: absolute;
             top: .5rem;
@@ -150,12 +150,12 @@
 
     .block-quote {
         .editor-area {
-            color: $text-light;
+            color: $gray-700;
             font-size: 1.5rem;
             font-family: "Open Sans";
             text-align: center;
             padding: .5rem 2rem;
-            border-left: solid 6px $bg_panel;
+            border-left: solid 6px $gray-300;
             min-height: 3.2rem;
         }
     }
@@ -170,7 +170,7 @@
     }
 
     &:hover, &:focus-within {
-        border-color: $color_border;
+        border-color: $gray-500;
         transition: border-color .2s ease-in-out;
 
         .block-label, .block-buttons, .block-extras {
@@ -192,20 +192,20 @@
     hr {
         margin: 0;
         border-top-width: 2px;
-        border-color: $bg_main;
+        border-color: $gray-400;
         transition: border-color ease-in-out .2s;
     }
 
     i {
-        background: $bg;
-        color: $bg_main;
+        background: $white;
+        color: $gray-400;
         position: absolute;
         top: 50%;
         left: 50%;
         margin-top: -18px;
         margin-left: -18px;
         font-size: 28px;
-        border: solid 4px $bg;;
+        border: solid 4px $white;;
         border-radius: 50%;
         z-index: 1000;
         transition: color ease-in-out .2s;
@@ -216,11 +216,11 @@
         outline: 0;
 
         hr {
-            border-color: $text_medium;
+            border-color: $gray-800;
         }
 
         i {
-            color: $text_medium;
+            color: $gray-800;
         }
     }
 
@@ -257,8 +257,8 @@
 
     a {
         display: block;
-        background: darken($bg_panel, 7%);
-        color: $text_light;
+        background: darken($gray-300, 7%);
+        color: $gray-700;
         text-align: center;
         font-size: .75rem;
         padding: .75rem .5rem;
@@ -266,19 +266,19 @@
         transition: background-color .2s ease-in-out;
 
         &:hover {
-            background-color: darken($bg_panel, 14%);
+            background-color: darken($gray-300, 14%);
             text-decoration: none;
             transition: background-color .2s ease-in-out;
 
             i {
-                color: $text_light;
+                color: $gray-700;
                 transition: color .2s ease-in-out;
             }
         }
 
         i {
             display: block;
-            color: $text_lighter;
+            color: $gray-600;
             font-size: 1.5rem;
             height: 2rem;
             transition: color .2s ease-in-out;

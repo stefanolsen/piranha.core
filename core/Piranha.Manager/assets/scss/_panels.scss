@@ -1,13 +1,13 @@
-@import "colors";
+@import "variables";
 
 .panel {
-    background: $bg_main;
+    background: $gray-400;
     position: fixed;
     height: 100%;
     top: 0;
     right: 0;
     padding: .5rem 1rem;
-    border-left: solid 4px $bg;
+    border-left: solid 4px $white;
     z-index: 67000;
     transition: right .2s ease-in-out;
 
@@ -17,13 +17,13 @@
     }
 
     .panel-handle {
-        background: $bg_main;
+        background: $gray-400;
         position: absolute;
         width: 24px;
         height: 80px;
         top: 100px;
         left: -40px;
-        border: solid 4px $bg;
+        border: solid 4px $white;
         border-right: 0;
         border-top-left-radius: .5rem;
         border-bottom-left-radius: .5rem;
@@ -31,7 +31,7 @@
         cursor: pointer;
 
         i {
-            color: $text_medium;
+            color: $gray-800;
             position: absolute;
             top: 50%;
             width: 24px;
@@ -49,14 +49,14 @@
     }
 
     .panel-close {
-        color: $text_medium;
+        color: $gray-800;
         float: right;
         padding: .75rem .5rem .5rem;
         font-size: 1rem;
         transition: color .2s ease-in-out;
 
         &:hover {
-            color: $color_link;
+            color: $primary;
             transition: color .2s ease-in-out;
         }
     }

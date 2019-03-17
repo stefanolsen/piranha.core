@@ -1,24 +1,24 @@
-@import "colors";
+@import "variables";
 
 //
 // Basic buttons
 //
 .btn {
     &.btn-primary, &.btn-primary.dropdown-toggle {
-        background-color: $color_link;
-        border-color: darken($color_link, 1%);
+        background-color: $primary;
+        border-color: darken($primary, 1%);
 
         &:hover {
-            background-color: $color_link_hover;
-            border-color: darken($color_link_hover, 1%);
+            background-color: darken($primary, 8%);
+            border-color: darken($primary, 8%);
         }
     }
 
     &.btn-link {
-        color: $color_link;
+        color: $primary;
 
         &:hover {
-            color: $color_link_hover;
+            color: darken($primary, 8%);;
         }
     }
 
@@ -49,7 +49,7 @@
         transition: all ease-in-out .2s;
 
         i {
-            color: $color_link;
+            color: $primary;
             transition: color ease-out .2s;
         }
 
@@ -64,12 +64,12 @@
         }
 
         &:hover, &:focus {
-            background: $color_link;
+            background: $primary;
             outline: none;
             box-shadow: 0 2px 1px rgba(0,0,0,.3);
 
             i {
-                color: $bg_main;
+                color: $gray-400;
             }
         }
     }

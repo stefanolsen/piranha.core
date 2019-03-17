@@ -1,5 +1,5 @@
 
-@import "colors";
+@import "variables";
 
 .dd {
     position: relative;
@@ -38,14 +38,14 @@
 }
 
 .dd-handle {
-    background: $bg;
+    background: $white;
     display: block;
     float: left;
-    color: $text_lighter;
+    color: $gray-600;
     width: 34px;
     height: 43px;
     padding: 10px;
-    border-right: solid 2px $bg_main;
+    border-right: solid 2px $gray-400;
     box-sizing: border-box;
     cursor: pointer;
     text-align: center;
@@ -93,8 +93,8 @@
     margin: 4px 0;
     padding: 0;
     min-height: 43px;
-    background: $color_drop;
-    border: 1px dashed $color_sortable_border;
+    background: $gray-400;
+    border: 1px dashed $gray-700;
     box-sizing: border-box;
 
     span {

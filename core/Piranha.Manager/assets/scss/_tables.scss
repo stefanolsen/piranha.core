@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 
 .table {
     thead {
@@ -25,21 +25,21 @@
     tbody {
         tr {
             background: #fff;
-            border-top: solid 2px $bg_main;
+            border-top: solid 2px $gray-400;
 
             &:focus-within {
-                background: $color_drop;
+                background: $gray-400;
             }
 
             a:focus {
-                background: darken($color_drop, 5%);
-                color: $color_link_hover;
+                background: darken($gray-400, 5%);
+                color: darken($primary, 8%);;
                 text-decoration: underline;
                 outline: none;
             }
 
             &.dropping {
-                background: $color_drop;
+                background: $gray-400;
             }
 
             td:first-child {
@@ -106,7 +106,7 @@
             left: 0;
             height: 48px;
             padding: .8rem;
-            border-right: solid 2px $bg_main;
+            border-right: solid 2px $gray-400;
         }
 
         .text-limit-cell {
@@ -114,7 +114,7 @@
         }
 
         .media-icon {
-            color: $text_lighter;
+            color: $gray-600;
             margin-right: .5rem;
         }
     }

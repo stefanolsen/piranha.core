@@ -50,7 +50,7 @@ var output = {
 };
 
 gulp.task('min:css', function () {
-    return gulp.src('Assets/scss/style.scss')
+    return gulp.src('Assets/scss/piranha.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cssmin())
         .pipe(rename({

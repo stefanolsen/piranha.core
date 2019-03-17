@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 
 .body {
     .breadcrumb {
@@ -9,16 +9,16 @@
         text-transform: uppercase;
 
         .breadcrumb-item {
-            color: $color_link;
+            color: $primary;
 
             &.active {
-                color: $text_lighter;
+                color: $gray-600;
             }
         }
     }
 
     pre {
-        background: $bg_panel;
+        background: $gray-300;
         padding: .5rem;
         margin: 0 -.5rem 1rem;
     }

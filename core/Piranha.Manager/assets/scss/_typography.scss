@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 
 h1 {
     font-size: 2rem;
@@ -9,18 +9,18 @@ h1 {
 }
 
 a {
-    color: $color_link;
+    color: $primary;
 
     &:hover {
-        color: $color_link_hover;
+        color: darken($primary, 8%);;
     }
 }
 
 .text-help {
-    color: $text_lighter;
+    color: $gray-600;
     font-size: .8rem;
     padding: .5rem 1rem;
-    border-left: solid 4px lighten($color_link, 50%);
+    border-left: solid 4px lighten($primary, 50%);
 }
 
 .tooltip-inner {

@@ -1,4 +1,4 @@
-@import "colors";
+@import "variables";
 
 .modal-backdrop {
     z-index: 67100;
@@ -19,7 +19,7 @@
             height: 100%;
 
             .modal-content {
-                background: $bg_main;
+                background: $gray-400;
                 min-height: 100%;
                 border-color: #fff;
                 border-width: 0 0 0 4px;

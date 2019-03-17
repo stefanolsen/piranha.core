@@ -1,7 +1,3 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../../node_modules/dropzone/dist/dropzone";
-@import "../fontawesome/css/all";
-
 /*!
  * Copyright (c) 2016-2019 Håkan Edling
  *
@@ -12,11 +8,14 @@
  *
  */
 
-@import "structure";
+// Importing functions first fixes a know build error
+@import "../../../node_modules/bootstrap/scss/_functions.scss";
+
+// Overwrite Bootstrap variables
+@import "variables";
+
+//Extend and/or overwrite Bootstrap
 @import "typography";
-@import "login";
-@import "navigation";
-@import "sortable";
 @import "forms";
 @import "tables";
 @import "buttons";
@@ -24,6 +23,18 @@
 @import "lists";
 @import "dropdowns";
 @import "modals";
+
+
+// Import libraries
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/dropzone/dist/dropzone";
+@import "../../fontawesome/css/all";
+
+// Custom components
+@import "structure";
+@import "navigation";
+@import "login";
+@import "sortable";
 @import "sitemap";
 @import "nestable";
 @import "fields";

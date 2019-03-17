@@ -1,0 +1,43 @@
+//
+// Variables for the styles of the Marklund Solutions LMS Portal
+//
+
+//
+// Colors system
+//
+
+$white:    #fff;
+$gray-100: #f9f9f9;
+$gray-200: #f5f5f5;
+$gray-300: #f4f4f4;
+$gray-400: #f2f2f2;
+$gray-500: #ddd;
+$gray-600: #999;
+$gray-700: #666;
+$gray-800: #333;
+$gray-900: #222;
+$black:    #000;
+
+$blue:      #007eaa;
+$indigo:    #6610f2;
+$purple:    #6f42c1;
+$pink:      #e83e8c;
+$red:       #dc3545;
+$orange:    #ff7200;
+$yellow:    #f0ad4e;
+$green:     #218838;
+$teal:      #20c997;
+$cyan:      #17a2b8;
+
+$info:      $cyan;
+$primary:   $blue;
+$warning:   $orange;
+
+$body-bg:   $gray-200;
+
+//Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+// stylelint-disable value-keyword-case
+
+$font-family-base:          'Open Sans', sans-serif;
