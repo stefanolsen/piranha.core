@@ -11,15 +11,18 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
+            </div> 
 
             <!-- Tabs -->
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" :class="{active: listView}" v-on:click.prevent="toggle"><i class="fas fa-list"></i></a>
+                    <a class="nav-link" :class="{active: listView}" v-on:click.prevent="toggle"><i class="fas fa-list"></i> @Localizer["List"]</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" :class="{active: !listView}" v-on:click.prevent="toggle"><i class="fas fa-table"></i></a>
+                    <a class="nav-link" :class="{active: !listView}" v-on:click.prevent="toggle"><i class="fas fa-table"></i> @Localizer["Thumbnails"]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fas fa-upload"></i> @Localizer["Upload"]</a>
                 </li>
             </ul>
 
