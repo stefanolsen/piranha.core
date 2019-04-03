@@ -1,0 +1,17 @@
+@import "variables";
+
+.dropzone {
+    background-color: white;
+    padding: 5rem;
+    text-align: center;
+    border: dashed 2px $gray-400;
+    font-size: 18px;
+    color: $gray-400;
+    border-radius: 8px;
+
+    .dz-message {
+        span {
+            margin-right: 5px;
+        }
+    }
+}

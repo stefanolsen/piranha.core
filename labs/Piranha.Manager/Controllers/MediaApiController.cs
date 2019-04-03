@@ -121,7 +121,7 @@ namespace Piranha.Manager.Controllers
         /// <param name="model">The upload model</param>
         [HttpPost]
         [Route("upload")]
-        public async Task<IActionResult> Add(MediaUploadModel model)
+        public async Task<IActionResult> Upload(MediaUploadModel model)
         {            
             // Allow for dropzone uploads
             if (!model.Uploads.Any())

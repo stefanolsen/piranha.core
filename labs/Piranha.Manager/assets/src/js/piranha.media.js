@@ -99,5 +99,21 @@ piranha.media = new Vue({
     },
     created: function () {
         this.load();
+
+        Dropzone.autoDiscover = false;
+        $("#dropzone").dropzone({
+            paramName: 'Uploads',
+            url: piranha.baseUrl + "manager/api/media/upload",
+            uploadMultiple: true,
+            previewsContainer: "#previewsContainer",
+            init: function () {
+                this.on("sending", function (file, xhr, formData) {
+                    console.log("Sending", file, xhr, formData)
+                });
+                this.on("queuecomplete", function (file) {
+                    console.log("Completed")
+                });
+            }
+        });
     }
 });
