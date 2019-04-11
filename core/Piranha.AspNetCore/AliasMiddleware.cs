@@ -34,7 +34,7 @@ namespace Piranha.AspNetCore
         /// <returns>An async task</returns>
         public override async Task Invoke(HttpContext context, IApi api, IApplicationService service)
         {
-            if (!IsHandled(context) && !context.Request.Path.Value.StartsWith("/manager/assets/"))
+            if (!IsHandled(context) && !context.Request.Path.StartsWithSegments(ManagerBasePath))
             {
                 var url = context.Request.Path.HasValue ? context.Request.Path.Value : "";
 

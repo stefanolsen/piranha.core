@@ -21,6 +21,8 @@ namespace Piranha.AspNetCore
     /// </summary>
     public abstract class MiddlewareBase
     {
+        protected static PathString ManagerBasePath = new PathString("/manager/");
+
         /// <summary>
         /// The next middleware in the pipeline.
         /// </summary>

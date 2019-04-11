@@ -10,13 +10,10 @@
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Microsoft.Net.Http.Headers;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Piranha.AspNetCore.Services;
-using Piranha.Services;
-using Piranha.Web;
 using X.Web.Sitemap;
 
 namespace Piranha.AspNetCore
@@ -38,38 +35,34 @@ namespace Piranha.AspNetCore
         /// <returns>An async task</returns>
         public override async Task Invoke(HttpContext context, IApi api, IApplicationService service)
         {
-            if (!IsHandled(context) && !context.Request.Path.Value.StartsWith("/manager/assets/"))
+            if (!IsHandled(context) && context.Request.Path == "/sitemap.xml")
             {
-                var url = context.Request.Path.HasValue ? context.Request.Path.Value : "";
                 var host = context.Request.Host.Host;
                 var scheme = context.Request.Scheme;
                 var port = context.Request.Host.Port;
                 var baseUrl = scheme + "://" + host + (port.HasValue ? $":{port}" : "");
 
-                if (url.ToLower() == "/sitemap.xml")
+                _logger?.LogInformation($"Sitemap.xml requested, generating");
+
+                // Get the requested site by hostname
+                var siteId = service.Site.Id;
+
+                // Get the sitemap for the site
+                var pages = await api.Sites.GetSitemapAsync(siteId);
+
+                // Generate sitemap.xml
+                var sitemap = new Sitemap();
+
+                foreach (var page in pages)
                 {
-                    _logger?.LogInformation($"Sitemap.xml requested, generating");
+                    var urls = await GetPageUrlsAsync(api, page, baseUrl);
 
-                    // Get the requested site by hostname
-                    var siteId = service.Site.Id;
-
-                    // Get the sitemap for the site
-                    var pages = await api.Sites.GetSitemapAsync(siteId);
-
-                    // Generate sitemap.xml
-                    var sitemap = new Sitemap();
-
-                    foreach (var page in pages)
-                    {
-                        var urls = await GetPageUrlsAsync(api, page, baseUrl);
-
-                        if (urls.Count > 0)
-                            sitemap.AddRange(urls);
-                    }
-                    context.Response.ContentType = "application/xml";
-                    await context.Response.WriteAsync(sitemap.ToXml());
-                    return;
+                    if (urls.Count > 0)
+                        sitemap.AddRange(urls);
                 }
+                context.Response.ContentType = "application/xml";
+                await context.Response.WriteAsync(sitemap.ToXml());
+                return;
             }
             await _next.Invoke(context);
         }
