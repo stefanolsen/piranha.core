@@ -33,12 +33,12 @@ public static class CoreExtensions
     {
         return builder
             .UseMiddleware<Piranha.AspNetCore.ApplicationMiddleware>()
+            .UseMiddleware<Piranha.AspNetCore.StartPageMiddleware>()
+            .UseMiddleware<Piranha.AspNetCore.SitemapMiddleware>()
             .UseMiddleware<Piranha.AspNetCore.AliasMiddleware>()
             .UseMiddleware<Piranha.AspNetCore.PageMiddleware>()
             .UseMiddleware<Piranha.AspNetCore.PostMiddleware>()
-            .UseMiddleware<Piranha.AspNetCore.ArchiveMiddleware>()
-            .UseMiddleware<Piranha.AspNetCore.StartPageMiddleware>()
-            .UseMiddleware<Piranha.AspNetCore.SitemapMiddleware>();
+            .UseMiddleware<Piranha.AspNetCore.ArchiveMiddleware>();
     }
 
     /// <summary>
