@@ -57,7 +57,7 @@ namespace Piranha.Web
                             {
                                 PageId = page.Id,
                                 Route = route,
-                                QueryString = $"id={page.Id}&startpage={isStartPage.ToString().ToLower()}&piranha_handled=true",
+                                QueryString = $"id={page.Id}&startpage={isStartPage.ToString().ToLower()}",
                                 IsPublished = page.Published.HasValue && page.Published.Value <= DateTime.Now,
                                 CacheInfo = new HttpCacheInfo
                                 {

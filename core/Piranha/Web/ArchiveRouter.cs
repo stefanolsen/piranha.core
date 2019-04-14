@@ -159,7 +159,7 @@ namespace Piranha.Web
                         {
                             PageId = blog.Id,
                             Route = route,
-                            QueryString = $"id={blog.Id}&year={year}&month={month}&page={page}&pagenum={page}&category={categoryId}&tag={tagId}&piranha_handled=true",
+                            QueryString = $"id={blog.Id}&year={year}&month={month}&page={page}&pagenum={page}&category={categoryId}&tag={tagId}",
                             IsPublished = blog.Published.HasValue && blog.Published.Value <= DateTime.Now,
                             CacheInfo = new HttpCacheInfo
                             {

@@ -43,6 +43,8 @@ namespace Piranha.AspNetCore
                 {
                     _logger?.LogInformation($"Found alias\n  Alias: {url}\n  Redirect: {response.RedirectUrl}");
 
+                    SetIsHandled(context);
+
                     context.Response.Redirect(response.RedirectUrl, response.RedirectType == Models.RedirectType.Permanent);
                     return;
                 }

@@ -59,6 +59,7 @@ namespace Piranha.AspNetCore
                     {
                         if (string.IsNullOrWhiteSpace(response.RedirectUrl))
                         {
+                            SetIsHandled(context);
                             service.PageId = response.PageId;
 
                             using (var config = new Config(api))

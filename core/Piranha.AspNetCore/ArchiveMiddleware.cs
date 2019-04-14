@@ -43,6 +43,8 @@ namespace Piranha.AspNetCore
                 {
                     _logger?.LogInformation($"Found archive\n  Route: {response.Route}\n  Params: {response.QueryString}");
 
+                    SetIsHandled(context);
+
                     service.PageId = response.PageId;
                     context.Request.Path = new PathString(response.Route);
 

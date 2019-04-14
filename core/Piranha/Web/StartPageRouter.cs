@@ -42,7 +42,7 @@ namespace Piranha.Web
                         {
                             PageId = page.Id,
                             Route = page.Route ?? "/page",
-                            QueryString = "id=" + page.Id + "&startpage=true&piranha_handled=true",
+                            QueryString = "id=" + page.Id + "&startpage=true",
                             IsPublished = page.Published.HasValue && page.Published.Value <= DateTime.Now,
                             CacheInfo = new HttpCacheInfo
                             {

@@ -10,7 +10,6 @@
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Threading.Tasks;
 using Piranha.AspNetCore.Services;
 
@@ -21,6 +20,7 @@ namespace Piranha.AspNetCore
     /// </summary>
     public abstract class MiddlewareBase
     {
+        private const string HandledByPiranhaKey = "piranha_handled";
         protected static PathString ManagerBasePath = new PathString("/manager/");
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Piranha.AspNetCore
         /// Creates a new middleware instance.
         /// </summary>
         /// <param name="next">The next middleware in the pipeline</param>
-        public MiddlewareBase(RequestDelegate next)
+        protected MiddlewareBase(RequestDelegate next)
         {
             _next = next;
         }
@@ -47,7 +47,7 @@ namespace Piranha.AspNetCore
         /// </summary>
         /// <param name="next">The next middleware in the pipeline</param>
         /// <param name="factory">The logger factory</param>
-        public MiddlewareBase(RequestDelegate next, ILoggerFactory factory) : this(next)
+        protected MiddlewareBase(RequestDelegate next, ILoggerFactory factory) : this(next)
         {
             if (factory != null)
             {
@@ -71,12 +71,16 @@ namespace Piranha.AspNetCore
         /// <returns>If the request has already been handled</returns>
         protected bool IsHandled(HttpContext context)
         {
-            var values = context.Request.Query["piranha_handled"];
-            if (values.Count > 0)
-            {
-                return values[0] == "true";
-            }
-            return false;
+            return context.Items.ContainsKey(HandledByPiranhaKey);
+        }
+
+        /// <summary>
+        /// Marks a requests as already being handled by a Piranha middleware.
+        /// </summary>
+        /// <param name="context">The current http context</param>
+        protected void SetIsHandled(HttpContext context)
+        {
+            context.Items[HandledByPiranhaKey] = true;
         }
     }
 }

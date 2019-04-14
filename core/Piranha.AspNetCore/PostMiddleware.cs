@@ -57,6 +57,7 @@ namespace Piranha.AspNetCore
 
                     if (authorized)
                     {
+                        SetIsHandled(context);
                         service.PageId = response.PageId;
 
                         using (var config = new Config(api))

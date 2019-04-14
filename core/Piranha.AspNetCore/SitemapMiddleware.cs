@@ -43,6 +43,7 @@ namespace Piranha.AspNetCore
                 var baseUrl = scheme + "://" + host + (port.HasValue ? $":{port}" : "");
 
                 _logger?.LogInformation($"Sitemap.xml requested, generating");
+                SetIsHandled(context);
 
                 // Get the requested site by hostname
                 var siteId = service.Site.Id;
